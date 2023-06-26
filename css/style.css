@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+.wtf{
+/*
+    margin: 0 auto;
+    width: 60px;
+    height: 100%;
+*/
+}
+
+/*set modaal window to display none*/
+#inline{
+    display: none;
+}
+
+.one{
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+}
+
+.two{
+    width: 100%;
+    height: 100%;
+    background: grey;
+}
+
+.three{
+    transform: translateY(-200%);
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 1s;
+}
+
+.two:hover + .three{
+    transform: translateY(-100%);
+    transition: all 1s;
+}
+
+.three:hover + .three{
+    transform: translateY(-100%);
+    transition: all 1s;
+}

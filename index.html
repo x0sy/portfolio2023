@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modaal@0.4.4/dist/css/modaal.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>edsel's portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+</head>
+<body>
+    <a href="#inline" class="inline" style="display: none;">Show</a>
+        <div id="inline" style="display: none;">
+            <p>asdf</p>
+        </div>
+
+    <header class="header">
+        <ul class="header__list">
+            <li class="header__item"><img src="" alt="" class="header__logo"></li>
+            <li class="header__item">
+                <ul class="header__gnav">
+                    <li class="header__gnav-item">
+                        <a href="about.html" class="header__gnav-link">about</a>
+                    </li>
+                    <li class="header__gnav-item">
+                        <a href="contact.html" class="header__gnav-link">contact</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+
+    <main class="mvis">
+        <ul class="mvis__list">
+            <li class="mvis__item"><img src="" alt="" class="mvis__img"></li>
+            <li class="mvis__item">
+                <p class="mvis__logo">edsel's portfolio</p>
+            </li>
+        </ul>
+    </main>
+
+      <div class="one">
+          <div class="two">
+          </div>
+          <div class="three">
+              <p>a</p>
+          </div>
+      </div>
+
+    div.works>ul.works__list>(li.works__item>a.works__item-link>img.works__item-thumb^+div#inline)*8
+
+<!--modaal config-->
+    <script src="https://cdn.jsdelivr.net/npm/modaal@0.4.4/dist/js/modaal.min.js"></script>
+    <script>
+    $('.inline').modaal({
+        hide_close: false,
+        fullscreen: false,
+        animation: 'fade',
+        custom_class: 'wtf'
+    });
+    </script>
+</body>
+</html>
