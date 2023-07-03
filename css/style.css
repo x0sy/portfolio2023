@@ -7,11 +7,6 @@ html{
 }
 
 .wtf{
-/*
-    margin: 0 auto;
-    width: 60px;
-    height: 100%;
-*/
 }
 
 /*set modaal window to display none*/
@@ -19,60 +14,66 @@ html{
     display: none;
 }
 
-/*works block example, set `display: block;` when ready*/
-.one{
-    display: block;
-    margin: 0 auto;
-    width: 500px;
-    height: 500px;
-    overflow: hidden;
+.works__list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
 }
 
-.three{
-    display: block;
+.works__item{
+    overflow: hidden;
+    width: 25%;
+}
+
+.works__item-link{
     width: 100%;
     height: 100%;
-    background: red;
+    text-decoration: none;
+    color: white;
 }
 
-/*class this*/
-.three p{
+.works__item-txt{
     position: relative;
-    top: 50%;
-    display: block;
-    height: inherit;
+    top: 45%;
+    max-height: 100%;
+    height: 100%;
     text-align: center;
     transform: translateY(-200%);
-    transition: transform 1s;
+    transition: transform 1s cubic-bezier(.51,0,.15,1);
+    z-index: 4;
 }
 
 
 /*class this*/
-.three:hover p{
+.works__item-link:hover .works__item-txt{
     transform: translateY(-100%);
-    transition: transform 1s;
+    transition: transform 1s cubic-bezier(.51,0,.15,1);
 }
 
 /*class this*/
-.three img{
+.works__item-thumb{
     display: block;
+    object-fit: cover;
     width: 100%;
+    height: 100%;
 }
 
 
-.three::after{
+.works__item-link::after{
     display: block;
     position: relative;
     content: '';
-    background: green;
+    background: black;
     transform: translateY(-300%);
-    transition: all 1s;
+    transition: all 1s cubic-bezier(.51,0,.15,1);
     height: 100%;
     width: 100%;
-    opacity: 0.8;
+    opacity: 0.5;
+    z-index: 3;
 }
 
-.three:hover::after{
+.works__item-link:hover::after{
     transform: translateY(-200%);
-    transition: all 1s;
+    transition: all 1s cubic-bezier(.51,0,.15,1);
 }

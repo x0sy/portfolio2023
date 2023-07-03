@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale-1.0">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modaal@0.4.4/dist/css/modaal.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -9,11 +10,6 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
 </head>
 <body>
-    <a href="#inline" class="inline" style="display: none;">Show</a>
-        <div id="inline" style="display: none;">
-            <p>asdf</p>
-        </div>
-
     <header class="header">
         <ul class="header__list">
             <li class="header__item"><img src="" alt="" class="header__logo"></li>
@@ -39,23 +35,64 @@
         </ul>
     </main>
 
-<!--works hover anim thingo-->
-      <div class="one">
-          <a href="#" class="three">
-<!--adjust ::after pseudo element if adding more lines-->
-<!--also add class to p tag wtf-->
-                  <img src="images/a.png" alt="">
-                  <p>wtf man like</p>
-          </a>
-      </div>
-
 <!--works grid emmet abbrev-->
-    div.works>ul.works__list>(li.works__item>a.works__item-link>img.works__item-thumb^+div#inline)*8
+    <div class="works">
+        <ul class="works__list">
+            <li class="works__item">
+                <a href="" class="works__item-link">
+                    <img src="images/a.png" alt="" class="works__item-thumb">
+                    <p class="works__item-txt">asdf</p></a>
+                <div id="works__modal1"></div>
+            </li>
+            <li class="works__item">
+                <a href="" class="works__item-link">
+                    <img src="" alt="" class="works__item-thumb">
+                    <p class="works__item-txt"></p></a>
+                <div id="works__modal2"></div>
+            </li>
+            <li class="works__item">
+                <a href="" class="works__item-link">
+                    <img src="" alt="" class="works__item-thumb">
+                    <p class="works__item-txt"></p></a>
+                <div id="works__modal3"></div>
+            </li>
+            <li class="works__item">
+                <a href="" class="works__item-link">
+                    <img src="" alt="" class="works__item-thumb">
+                    <p class="works__item-txt"></p></a>
+                <div id="works__modal4"></div>
+            </li>
+            <li class="works__item">
+                <a href="" class="works__item-link">
+                    <img src="" alt="" class="works__item-thumb">
+                    <p class="works__item-txt"></p></a>
+                <div id="works__modal5"></div>
+            </li>
+            <li class="works__item">
+                <a href="" class="works__item-link">
+                    <img src="" alt="" class="works__item-thumb">
+                    <p class="works__item-txt"></p></a>
+                <div id="works__modal6"></div>
+            </li>
+            <li class="works__item">
+                <a href="" class="works__item-link">
+                    <img src="" alt="" class="works__item-thumb">
+                    <p class="works__item-txt"></p></a>
+                <div id="works__modal7"></div>
+            </li>
+            <li class="works__item">
+                <a href="" class="works__item-link">
+                    <img src="" alt="" class="works__item-thumb">
+                    <p class="works__item-txt"></p></a>
+                <div id="works__modal8"></div>
+            </li>
+        </ul>
+    </div>
 
 <!--modaal config-->
     <script src="https://cdn.jsdelivr.net/npm/modaal@0.4.4/dist/js/modaal.min.js"></script>
     <script>
-    $('.inline').modaal({
+    $('.works__item-link').modaal({
         hide_close: false,
         fullscreen: false,
         animation: 'fade',
