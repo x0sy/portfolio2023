@@ -4,6 +4,7 @@
 html{
     scroll-behavior: smooth;
     font-size: 87.5%;
+    color: #333;
     /*14px*/
 }
 
@@ -11,6 +12,7 @@ html{
 [id^="works__modal0"]{
     display: none;
 }
+
 .works__modal-list, .menu__list, .menu__gnav, .mvis__list{
     list-style: none;
 }
@@ -104,12 +106,14 @@ html{
 @media (min-width: 835px){
 
     .bigwrap{
-        height: 100vh;
         display: flex;
     }
 
     .headcon{
-        flex-basis: 30%;
+        flex-basis: 25%;
+        top: 0;
+        position: sticky;
+        height: 100vh;
     }
 
     .menu{
@@ -118,7 +122,9 @@ html{
         align-items: center;
         justify-content: center;
         text-align: center;
-/*        box-shadow: 2px 2px 10px black;*/
+        border-right: solid 1px #333;
+
+/*        box-shadow: 2px 2px 10px grey;*/
     }
 
     .menu__gnav-item{
@@ -143,15 +149,28 @@ html{
     }
 
 /*turn this on later*/
-    .mvis{
-        display: none;
+    .mcon{
+        flex-basis: 75%;
     }
 
-    .mcon{
-        width: 100%;
+    .mvis{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        text-align: left;
+        flex-direction: column;
+        padding-left: 50px;
     }
+
+    .intro{
+        font-size: 3rem;
+        letter-spacing: .1rem;
+        line-height: 5rem;
+    }
+
 
     .works{
+        height: 2000px;
     }
 
     .works__modal-list{
@@ -214,19 +233,46 @@ html{
 
 /*about*/
 .intro{
+    animation: .8s cubic-bezier(.51,0,.15,1) 1 forwards slidein;
+    opacity: 0;
+    user-select: none;
+}
+
+.intro:nth-child(2){
+    animation-delay: .8s;
+}
+
+.intro:nth-child(3), .intro:nth-child(4){
+    animation-delay: 1.8s;
+}
+
+.scroller{
     display: block;
-    animation: 1s ease-in 0s 1 fadein;
+    animation-name: fadein;
+    animation-delay: 2.8s;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    opacity: 0;
+}
+
+@keyframes slidein{
+    from{
+        letter-spacing: -0.1rem;
+        transform: translateX(-5%);
+    }
+
+    to{
+        opacity: 1;
+    }
 }
 
 @keyframes fadein{
     from{
         opacity: 0;
-        transform: translateX(-30%);
     }
 
     to{
         opacity: 1;
-        transform: translateX(0%;)
     }
 }
 
