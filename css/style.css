@@ -20,7 +20,7 @@ body{
 }
 
 /*hide contact form*/
-.menu__gnav-item:nth-child(3){
+.menu__gnav-item:nth-child(4){
     display: none;
 }
 
@@ -67,6 +67,7 @@ body{
     color: red;
 }
 
+/*mobile*/
 @media (min-width: 0px) and (max-width: 834px){
     .menu{
         height: 80px;
@@ -85,9 +86,12 @@ body{
         justify-content: space-between;
     }
 
+/*
+unused
     .menu__logo{
         transform: rotate(90deg) scale(0.6);
     }
+*/
 
     .menu__gnav{
         display: flex;
@@ -254,6 +258,7 @@ body{
     }
 }
 
+/*desktop*/
 @media (min-width: 835px){
 
     .bigwrap{
@@ -277,12 +282,12 @@ body{
     }
 
     .menu__gnav-item{
-        padding: 10px 0;
+        padding: 15px 0;
     }
 
     .menu__gnav-link{
         letter-spacing: .2rem;
-        font-size: 1.28rem;
+        font-size: 1.5rem;
     }
 
     .snsbar{
@@ -389,6 +394,7 @@ body{
         color: #333;
         font-size: 1.5rem;
 
+        margin: 0 auto;
         position: relative;
         top: 20%;
         text-align: center;
@@ -506,7 +512,7 @@ body{
 
 .scroller{
     animation-name: fadein;
-    animation-delay: 2.2s;
+    animation-delay: 2.1s;
     animation-fill-mode: forwards;
     animation-duration: 0.5s;
     opacity: 0;
@@ -628,12 +634,12 @@ body{
     }
 
     .scroller:hover .scroller-text{
-        opacity: 0.8;
+        opacity: 0.7;
         transition: opacity .4s;
     }
 
     .scroller:hover .scroller-arrow{
-        opacity: 0.7;
+        opacity: 0.6;
         transition: opacity: .4s;
     }
 
