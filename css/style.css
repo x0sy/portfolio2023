@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@700&display=swap');
 
 html{
@@ -355,7 +355,6 @@ body{
 
 /*works big*/
     .works{
-        height: 100vh;
     }
 
     .works-head{
@@ -365,7 +364,7 @@ body{
         padding-top: 20px;
 
         font-size: 1.5rem;
-        font-weight: 800;
+        font-weight: 700;
     }
 
     .works__list{
@@ -373,7 +372,8 @@ body{
     }
 
     .works__item{
-        width: 25%;
+        width: 33%;
+        height: 300px;
     }
 
     .works__modal-list{
@@ -462,37 +462,56 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    list-style: none;
 }
 
 .works__item{
     overflow: hidden;
-    align-items: center;
 }
 
 .works__item-link{
-    width: 100%;
-    height: 100%;
+    height: 300px;
     text-decoration: none;
-    color: white;
+
+    display: flex;
+    align-items: center;
+
+    pointer-events: auto;
 }
 
 .works__item-txt{
+    display: inline-block;
     position: relative;
     z-index: 4;
-    top: 45%;
-    max-height: 100%;
-    height: 100%;
     text-align: center;
-    transform: translateY(-200%);
-    transition: transform 1.2s cubic-bezier(.51,0,.15,1);
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    white-space: nowrap;
+
+    color: white;
+    font-size: 3rem;
+    font-weight: bolder;
+
+/*calc = vertical midpoint minus outline stroke and padding*/
+    transform: translateY(calc(-50% - 25px));
+    transition: transform 1.2s cubic-bezier(.51,0,.15,1), opacity 0.3s;
+
+    pointer-events: none;
+}
+
+.works__item-outline{
+    display: block;
+    padding: 15px;
+    border-top: white solid 5px;
+    border-bottom: white solid 5px;
+    width: 100%;
 }
 
 .works__item-thumb{
-    display: block;
     object-fit: cover;
     width: 100%;
-    height: 100%;
+
+    transition: filter 0.3s;
 }
 
 .works__modal-img{
@@ -660,33 +679,21 @@ body{
 
 /*mouse pointer hover animations*/
 @media (pointer: fine){
-    .works__item-link:hover .works__item-txt{
-        transform: translateY(-100%);
-        transition: transform 0.8s cubic-bezier(.51,0,.15,1);
+    .works__item:hover .works__item-thumb{
+        filter: blur(5px);
+        transition: filter 0.3s;
     }
 
-    .works__item-link::after{
-        display: block;
-        position: relative;
-        z-index: 3;
-        content: '';
-        background: black;
-        transform: translateY(-300%);
-        transition: all 1.2s cubic-bezier(.51,0,.15,1);
-        height: 100%;
-        width: 100%;
-        opacity: 0.6;
-    }
-
-    .works__item-link:hover::after{
-        transform: translateY(-200%);
-        transition: all 0.8s cubic-bezier(.51,0,.15,1);
+    .works__item:hover .works__item-txt{
+        opacity: 1;
+        transition: opacity 0.3s;
+        transition-delay: 50ms;
     }
 
     .sns:hover{
         fill: red;
         transition: fill 0.3s;
-}
+    }
 
     .scroller-text, .scroller-arrow{
         transition: opacity .2s;
@@ -706,14 +713,5 @@ body{
         background: #333;
         color: #E3F4EF;
         transition: all 0.2s;
-    }
-
-    .menu__logo{
-        transition: opacity 0.2s;
-    }
-
-    .menu__logo:hover{
-        opacity: 0.8;
-        transition: opacity 0.3s;
     }
 }
