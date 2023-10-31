@@ -398,7 +398,7 @@ body{
         font-size: 3rem;
         letter-spacing: .1rem;
         line-height: 5rem;
-        font-weight: 900;
+        font-weight: 500;
     }
 
     .scroller{
@@ -478,7 +478,6 @@ body{
 
     display: flex;
     align-items: center;
-    border: black solid 3px;
 /*    ^sumn like this^ maybe grow on hover*/
 
     pointer-events: auto;
@@ -510,6 +509,7 @@ body{
 
 .works__item-outline{
     display: block;
+    box-sizing: border-box;
     padding: 10px;
     border-top: white solid 5px;
     border-bottom: white solid 5px;
