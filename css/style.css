@@ -38,10 +38,6 @@ body{
     transition: color 0.3s;
 }
 
-.menu__gnav-link:hover{
-    color: red;
-    transition: color 0.3s;
-}
 
 .menu__gnav-link::after{
     content: "";
@@ -82,7 +78,7 @@ body{
     content: "";
     display: block;
     height: 100%;
-    width: 400%;
+    width: 300%;
 
     position: relative;
     top: 20px;
@@ -108,11 +104,11 @@ body{
 }
 
 .mvis__anim-char:nth-child(odd){
-    animation: down 0.8s cubic-bezier(.8,0,.4,1) forwards;
+    animation: dn 0.8s cubic-bezier(.8,0,.4,1) forwards;
 }
 
 .mvis__anim-char:nth-child(even){
-    animation: up 0.8s cubic-bezier(.8,0,.4,1) forwards;
+    animation: upp 0.8s cubic-bezier(.8,0,.4,1) forwards;
 }
 
 /*mobile*/
@@ -120,8 +116,7 @@ body{
     .menu{
         height: 80px;
         background: linear-gradient(#E3F4EF, 70%, transparent);
-        top: 0;
-        position: sticky;
+        position: fixed;
         z-index: 69;
         padding: 0 20px;
     }
@@ -162,6 +157,11 @@ body{
 /*index mobile*/
     .mvis__anim{
         margin: 0 auto;
+    }
+
+    .mvis__anim::after{
+        width: 400%;
+        left: -140%;
     }
 
     .mvis__anim-char{
@@ -345,6 +345,10 @@ body{
         font-size: 2rem;
     }
 
+    .mvis__anim::after{
+        left: -5%;
+    }
+
     .brek{
         display: none;
     }
@@ -474,6 +478,8 @@ body{
 
     display: flex;
     align-items: center;
+    border: black solid 3px;
+/*    ^sumn like this^ maybe grow on hover*/
 
     pointer-events: auto;
 }
@@ -489,19 +495,22 @@ body{
     white-space: nowrap;
 
     color: white;
-    font-size: 3rem;
+    text-shadow: 2px 2px 5px #333;
+    font-size: 2rem;
     font-weight: bolder;
+    transition: opacity 0.2s;
 
 /*calc = vertical midpoint minus outline stroke and padding*/
-    transform: translateY(calc(-50% - 25px));
-    transition: transform 1.2s cubic-bezier(.51,0,.15,1), opacity 0.3s;
+    top: calc(-50% - 30px);
+
+/*    animation: scrollx 1s linear 1s infinite;*/
 
     pointer-events: none;
 }
 
 .works__item-outline{
     display: block;
-    padding: 15px;
+    padding: 10px;
     border-top: white solid 5px;
     border-bottom: white solid 5px;
     width: 100%;
@@ -629,15 +638,15 @@ body{
 
 @keyframes scrollx{
     from{
-        transform: translateX(-400px);
+        transform: translateX(-50px);
     }
 
     to{
-        transform: translateX(-350px);
+        transform: translateX(0);
     }
 }
 
-@keyframes up{
+@keyframes upp{
     0%{
         bottom: -1.5rem;
     }
@@ -652,7 +661,7 @@ body{
     }
 }
 
-@keyframes down{
+@keyframes dn{
     0%{
         top: -1.5rem;
     }
@@ -713,5 +722,10 @@ body{
         background: #333;
         color: #E3F4EF;
         transition: all 0.2s;
+    }
+
+    .menu__gnav-link:hover{
+        color: red;
+        transition: color 0.3s;
     }
 }
