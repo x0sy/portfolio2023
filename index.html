@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, intial-scale-1.0">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modaal@0.4.4/dist/css/modaal.min.css">
+    <link rel="stylesheet" href="css/modaal.css">
     <link rel="stylesheet" href="css/style.css">
     <title>edsel's portfolio :: works</title>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
@@ -121,7 +121,7 @@
                                 <ul class="works__modal-list">
                                     <li class="works__modal-item">
                                         <h2 class="works__modal-head">商業施設シーズンSP</h2>
-                                        <p class="works__modal-txt">冬とクリスマスを中心にしたキャンペーンです。冬の時期でよく見かける赤、緑、白を配色にし、ど真ん中にクリスマすの花輪の配置とタイポグラフィーが使われているデザイン。色々なクリスマスの飾りが配置しており、メインビジュアルの花輪が「Joy」の「o」の役割を果たし、見かけるとクリスマスの気分になるように制作しました。キャンペーン名「Winter Joy Festival」はミロードがよく使われている「Joy」というワードを含め、考えました。</p>
+                                        <p class="works__modal-txt">冬とクリスマスを中心にしたキャンペーンです。冬の時期でよく見かける赤、緑、白を配色にし、ど真ん中にクリスマすの花輪の配置とタイポグラフィーが使われているデザイン。色々なクリスマスの飾りが配置しており、メインビジュアルの花輪が「Joy」の「o」の役割を果たし、見かけるとクリスマスの気分になるように制作しました。キャンペーン名「Winter Joy Festival」はミロードがよく使われている「Joy」というワードを含め、考えました。</p>
                                     </li>
                                     <li class="works__modal-item">
                                         <img src="images/szn.png" alt="" class="works__modal-img">
@@ -181,9 +181,12 @@
     <script src="https://cdn.jsdelivr.net/npm/modaal@0.4.4/dist/js/modaal.min.js"></script>
     <script>
     $('.works__item-link').modaal({
-        hide_close: false,
+        hide_close: true,
         fullscreen: false,
-        animation: 'fade'
+        animation: 'fade',
+        background: '#222',
+        close_text: '閉じる',
+        loading_content: 'Loading...'
     });
     </script>
 </body>

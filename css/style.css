@@ -380,18 +380,6 @@ body{
         height: 300px;
     }
 
-    .works__modal-list{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-    }
-
-    .works__modal-item{
-        width: 50%;
-        text-align: center;
-    }
-
 /*about big*/
     .intro{
         padding-left: 100px;
@@ -530,6 +518,18 @@ body{
     color: #333;
 }
 
+.works__modal-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.works__modal-item{
+    width: 90%;
+    text-align: center;
+    margin: 20px auto;
+}
 
 .works__modal-img{
     max-width: 100%;
