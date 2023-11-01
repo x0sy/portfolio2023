@@ -456,12 +456,6 @@ body{
 }
 
 /*works global*/
-.works__modal-head{
-    text-align: center;
-    font-size: 2.6rem;
-    margin-bottom: 20px;
-}
-
 .works__list{
     display: flex;
     flex-wrap: wrap;
@@ -522,6 +516,20 @@ body{
 
     transition: filter 0.3s;
 }
+
+/*modal global*/
+.works__modal-head{
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.works__modal-txt{
+    line-height: 1.5rem;
+    color: #333;
+}
+
 
 .works__modal-img{
     max-width: 100%;
