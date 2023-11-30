@@ -40,32 +40,50 @@ body{
     transition: color 0.3s;
 }
 
-
-.menu__gnav-link::after{
-    content: "";
-    display: block;
-    border-bottom: #333 solid 3px;
-    border-radius: 5px;
-    width: 100%;
-    transform: scale(0, 1);
-    transform-origin: left;
-    margin: 0 auto;
-}
-
-.menu__gnav-link:hover::after{
-    transform: scale(1, 1);
-    transform-origin: left;
-    transition: all 0.5s;
-}
-
 .sns{
     text-decoration: none;
     fill: #333;
     transition: fill 0.3s;
 }
 
+.sns--yt{
+    cursor: wait;
+}
+
+.sns--yt::before{
+    content: "coming soon!";
+    display: block;
+    position: absolute;
+    top: -1rem;
+    left: -.5rem;
+
+    opacity: 0;
+
+    text-align: center;
+
+    transition: opacity 250ms ease-in, top 300ms ease-in;
+
+    user-select: none;
+    pointer-events: none;
+}
+
+.sns--yt:hover::before{
+    opacity: 1;
+    top: -2rem;
+    color: #333;
+
+    transition: all 300ms ease-out;
+}
+
 .mvis{
     overflow: hidden;
+}
+
+.footer{
+    padding: 15px 0;
+
+    font-size: 0.85rem;
+    text-align: center;
 }
 
 /*mvis animation global*/
@@ -117,6 +135,7 @@ body{
 @media (min-width: 0px) and (max-width: 899px){
     .menu{
         height: 80px;
+        width: 100%;
         background: linear-gradient(#E3F4EF, 70%, transparent);
         position: fixed;
         z-index: 69;
@@ -341,7 +360,7 @@ body{
         flex-direction: column;
     }
 
-/*index big*/
+/*index desktop*/
     .mvis__anim{
         padding-left: 5%;
         font-size: 2rem;
@@ -359,7 +378,7 @@ body{
         margin-right: 30px;
     }
 
-/*works big*/
+/*works desktop*/
     .works{
     }
 
@@ -378,11 +397,11 @@ body{
     }
 
     .works__item{
-        width: 33%;
+        width: calc(100% / 3);
         height: 300px;
     }
 
-/*about big*/
+/*about desktop*/
     .intro{
         padding-left: 100px;
         font-size: 3rem;
@@ -433,7 +452,7 @@ body{
         margin: auto;
     }
 
-/*contact big*/
+/*contact desktop*/
     .mvis__form{
         width: 60%;
     }
@@ -462,7 +481,6 @@ body{
 
     display: flex;
     align-items: center;
-/*    ^sumn like this^ maybe grow on hover*/
 
     pointer-events: auto;
 }
@@ -481,30 +499,41 @@ body{
     text-shadow: 2px 2px 5px #333;
     font-size: 2rem;
     font-weight: bolder;
-    transition: opacity 0.2s;
 
-/*calc = vertical midpoint minus outline stroke and padding*/
-    top: calc(-50% - 30px);
-
-/*    animation: scrollx 1s linear 1s infinite;*/
+    top: calc(-45% - 1rem);
 
     pointer-events: none;
+}
+
+.works__item--milk{
+    background: radial-gradient(circle at 50%, #FFF 80%, #eee);
 }
 
 .works__item-outline{
     display: block;
     box-sizing: border-box;
-    padding: 10px;
-    border-top: white solid 5px;
-    border-bottom: white solid 5px;
+
     width: 100%;
 }
 
-.works__item-thumb{
+.works__thumb{
     object-fit: cover;
+    height: 100%;
     width: 100%;
 
     transition: filter 0.3s;
+}
+
+.works__thumb--typo{
+    object-position: top;
+}
+
+.works__thumb--milk{
+    height: auto;
+}
+
+.works__thumb--ec{
+    object-position: left;
 }
 
 /*modal global*/
@@ -698,14 +727,33 @@ body{
 
 /*mouse pointer hover animations*/
 @media (pointer: fine){
-    .works__item:hover .works__item-thumb{
+
+.menu__gnav-link::after{
+    content: "";
+    display: block;
+    border-bottom: #333 solid 3px;
+    border-radius: 5px;
+    width: 100%;
+    transform: scale(0, 1);
+    transform-origin: left;
+    margin: 0 auto;
+}
+
+.menu__gnav-link:hover::after{
+    transform: scale(1, 1);
+    transform-origin: left;
+    transition: all 0.5s;
+}
+
+    .works__item:hover .works__thumb{
         filter: blur(5px);
         transition: filter 0.3s;
     }
 
     .works__item:hover .works__item-txt{
         opacity: 1;
-        transition: opacity 0.3s;
+        top: calc(-50% - 1rem);
+        transition: opacity 0.3s, top 300ms ease-out;
         transition-delay: 50ms;
     }
 
