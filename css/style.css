@@ -234,6 +234,14 @@ body{
         box-sizing: content-box;
     }
 
+    .works__modal-head{
+        font-size: 1.5rem;
+    }
+
+    .works__modal-item{
+        margin: 10px auto;
+    }
+
 /*about mobile*/
     .intro{
         padding-left: 50px;
@@ -401,9 +409,16 @@ body{
         height: 300px;
     }
 
-
     .works__item--milk{
         background: radial-gradient(circle at 50%, #FFF 80%, #eee);
+    }
+
+    .works__modal-head{
+        font-size: 2.6rem;
+    }
+
+    .works__modal-item{
+        margin: 20px auto;
     }
 
 /*about desktop*/
@@ -540,8 +555,6 @@ body{
 /*modal global*/
 .works__modal-head{
     text-align: center;
-    font-size: 2.6rem;
-    margin-bottom: 20px;
     color: #333;
 }
 
@@ -560,7 +573,6 @@ body{
 .works__modal-item{
     width: 90%;
     text-align: center;
-    margin: 20px auto;
 }
 
 .works__modal-img{
