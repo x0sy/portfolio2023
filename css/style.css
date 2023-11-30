@@ -401,6 +401,11 @@ body{
         height: 300px;
     }
 
+
+    .works__item--milk{
+        background: radial-gradient(circle at 50%, #FFF 80%, #eee);
+    }
+
 /*about desktop*/
     .intro{
         padding-left: 100px;
@@ -505,10 +510,6 @@ body{
     pointer-events: none;
 }
 
-.works__item--milk{
-    background: radial-gradient(circle at 50%, #FFF 80%, #eee);
-}
-
 .works__item-outline{
     display: block;
     box-sizing: border-box;
@@ -564,6 +565,7 @@ body{
 
 .works__modal-img{
     max-width: 100%;
+    background: white;
 }
 
 .modaal-content-container iframe{
