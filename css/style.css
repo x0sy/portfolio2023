@@ -556,6 +556,8 @@ body{
 .works__modal-head{
     text-align: center;
     color: #333;
+
+    font-weight: 700;
 }
 
 .works__modal-txt{
