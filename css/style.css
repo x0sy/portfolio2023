@@ -58,6 +58,7 @@ body{
     left: -.5rem;
 
     opacity: 0;
+    color: #333;
 
     text-align: center;
 
@@ -70,7 +71,6 @@ body{
 .sns--yt:hover::before{
     opacity: 1;
     top: -2rem;
-    color: #333;
 
     transition: all 300ms ease-out;
 }
